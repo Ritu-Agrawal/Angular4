@@ -1,0 +1,43 @@
+<div>
+    <div class="jumbotron">
+        <h1>Angular Pipes</h1>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Inbuilt Pipes</h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                {{ 'Karthik' | uppercase }}
+            </div>
+             <div class="well">
+                {{ 'KARTHIK' | lowercase }}
+            </div>
+            <div class="well">
+                {{ 50 | currency:"INR":true }}
+            </div>
+            <div class="well">
+                {{ today | date:'dd, EEEE MMMM yyyy' }}
+            </div>
+            <div class="well">
+                {{ data | json }}
+            </div>
+             <div class="well">
+                {{ observableObj | async }}
+            </div>
+        </div>
+    </div>
+     <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Custom Pipes</h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                {{ 'karthik' | changecase:'upper' }}
+            </div>
+             <div class="well">
+                {{ [1,2,3,4,5,6] | filternumbers:'odd' }}
+            </div>
+        </div>
+    </div>
+</div>
