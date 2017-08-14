@@ -1,0 +1,43 @@
+<div>
+    <div class="jumbotron">
+        <h1>Databinding</h1>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Interpolation</h3>
+        </div>
+        <div class="panel-body">
+            {{ 'Company Name: '+ companyName }}
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Property Binding</h3>
+        </div>
+        <div class="panel-body">
+            <span>City : </span> <input type="text" [value]="city" readonly/>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Event Binding</h3>
+        </div>
+        <div class="panel-body">
+            <div>
+                <button class="btn btn-primary" (click)="getCurrentTime()">Get Current Time</button>
+                <hr>
+                <span>{{'Current Time: '+ currentTime}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Twoway Binding</h3>
+        </div>
+        <div class="panel-body">
+            <span>Message : </span> <input type="text" [(ngModel)]="message"/>
+            <hr>
+            <span>{{'Message : '+ message}}</span>
+        </div>
+    </div>
+</div>

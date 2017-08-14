@@ -1,0 +1,85 @@
+<div>
+    <div class="page-header">
+        <h1>Directives</h1>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Structural Directives</h2>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <h3>NgIf - Structural Directive</h3>
+                <div *ngIf="showStatus">Div displayed because showStatus is true</div>
+                <hr>
+                <button class="btn btn-primary" (click)="toggleStatus()">{{ showStatus?'Hide Div':'Show Div' }}</button>
+            </div>
+            <div class="well">
+                <h3>NgFor - Structural Directive</h3>
+                <div>
+                    <ul>
+                        <li *ngFor="let city of cities">{{ city }}</li>
+                    </ul>
+                    <hr>
+                    <span>Employees: </span>
+                    <select>
+                        <option *ngFor="let employee of employees; index as i" [value]="i">{{employee.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="well">
+                <h3>NgSwitchCase - Structural Directive</h3>
+                <div [ngSwitch]="counter">
+                    <div *ngSwitchCase="0">Zero</div>
+                    <div *ngSwitchCase="1">One</div>
+                    <div *ngSwitchCase="2">Two</div>
+                    <div *ngSwitchCase="3">Three</div>
+                    <div *ngSwitchDefault>Not Supported</div>
+                </div>
+                <hr/>
+                <button class="btn btn-primary" (click)="incrementCounter()">Increment Counter</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Attribute Directives</h2>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <h3>NgClass - Attribute Directive</h3>
+                <button class="btn" [ngClass]="{'btn-primary': isPrimary}" (click)="isPrimary = !isPrimary">Attribute Button</button>
+            </div>
+            <div class="well">
+                <h3>NgStyle - Attribute Directive</h3>
+                <div [ngStyle]="{'font-weight': fontWeight,'font-style': fontStyle, 'font-size':fontSize }">Change the Style of the text</div>
+                <hr>
+                <input type="checkbox" (change)="fontWeight=fontWeight=='normal'?'bold':'normal'" />Bold&nbsp;
+                <input type="checkbox" (change)="fontStyle=fontStyle=='normal'?'italic':'normal'" />Italic&nbsp; Size : <input
+                    type="textbox" (change)="changeSize($event)" />
+            </div>
+            <div class="well">
+                <h3>NgModel - Attribute Directive</h3>
+                <div>
+                    Message : <input type="text" [(ngModel)]="message"/>
+                    <hr>
+                    <span [innerText]="message"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Custom Directives</h2>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <h3>Custom Attribute Directive</h3>
+                <button class="btn btn-primary">Normal Button</button>
+                <button data-cg-hover data-custom-style="sty01" class="btn btn-primary">First Button</button>
+                <button data-cg-hover data-custom-style="sty02" class="btn btn-primary">Second Button</button>
+                <hr/>
+                <div data-cg-hover data-custom-style="sty01">Sample Div</div>
+            </div>
+        </div>
+    </div>
+</div>

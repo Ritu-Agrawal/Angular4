@@ -1,0 +1,25 @@
+<div>
+    <div class="jumbotron">
+        <h1>Component Life Cycle</h1>
+    </div>
+    <div>
+        <cg-sample *ngIf="status"></cg-sample>
+        <hr>
+        <button class="btn btn-primary" (click)="toggleView()">Show / Hide Component</button>
+    </div>
+    <br>
+    <div>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="txtFirstName">First Name</label>
+                <input type="text" class="form-control" name="txtFirstName" id="txtFirstName" placeholder="First Name" [(ngModel)]='firstName'>
+            </div>
+            <div class="form-group">
+                <label for="txtLastName">Last Name</label>
+                <input type="text" class="form-control" name="txtLastName" id="txtLastName" placeholder="Last Name" [(ngModel)]='lastName'>
+            </div>
+            </form>
+        <br>
+        <cg-demo [firstName]='firstName' [lastName]='lastName'></cg-demo>
+    </div>
+</div>

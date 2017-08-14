@@ -1,0 +1,20 @@
+<div>
+    <h1>{{guest.name}} Details</h1>
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>{{ guest.id }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ guest.name }}</td>
+        </tr>
+        <tr>
+            <td>Contact Number</td>
+            <td>{{ guest.contactNumber }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><button (click)="navigateHome()" class="btn-primary">Back</button></td>
+        </tr>
+     </table>
+</div>

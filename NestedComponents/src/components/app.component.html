@@ -1,0 +1,20 @@
+<div>
+    <div class="jumbotron sty">
+        <h1>Outer Component</h1>
+        <div class="well sty01">{{'Message from Inner Component : '+innerMsgHolder }}</div>
+        <div class="panel panel-default sty01">
+            <div class="panel-heading">
+                <h3 class="panel-title">Accessing Person Object from Inner Component</h3>
+            </div>
+            <div class="panel-body">
+                <div>
+                    <span>Name : </span>  <span> {{innerTemplateVar.personObj.name}} </span><hr>
+                    <span>Department : </span> <span> {{innerTemplateVar.personObj.department}} </span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <inner-app #innerTemplateVar [outerMsgHolder]="outerMsg" (innerEvent)="getDetails($event)"></inner-app>
+            <div>
+            </div>
+        </div>

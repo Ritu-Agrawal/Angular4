@@ -1,0 +1,21 @@
+<div>
+    <h1>Guest List</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let guest of guests">
+                <td>{{ guest.id }}</td>
+                <td>{{ guest.name }}</td>
+                <td>{{ guest.contactNumber }}</td>
+                <td><button (click)="viewGuest(guest)" class="btn-primary">View</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

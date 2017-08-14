@@ -1,0 +1,33 @@
+<div>
+    <div class="jumbotron">
+        <h1>Angular Service Demo</h1>
+    </div>
+    <div>
+        <div>
+            <button class="btn btn-primary" (click)="addGuest({id:4,name:'Karthik',contactNumber:'9986173094'})">AddGuest</button>
+        </div>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Contact Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let guest of guests">
+                    <td>{{guest.id}}</td>
+                    <td>{{guest.name}}</td>
+                    <td>{{guest.contactNumber}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="well">
+        <button class="btn btn-primary" (click)="setFoo()">Get Foo Details</button>
+        <hr>
+        <h3>{{foo.greet}}</h3>
+    </div>
+</div>
