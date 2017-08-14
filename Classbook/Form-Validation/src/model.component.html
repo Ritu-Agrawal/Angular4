@@ -1,0 +1,27 @@
+<div>
+	<h1>Form Validation</h1>
+	<hr/>
+	<form class="form-horizontal" novalidate [formGroup]="personForm" (ngSubmit)="onSubmitForm()">
+	  <div class="form-group">
+		<label for="name" class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-10">
+		  <input type="text" class="form-control" placeholder="Name" [formControl]="personForm.controls['personName']">
+				<small *ngIf="personForm.controls['personName'].hasError('required')" class="text-danger">Name is required</small>
+				<small *ngIf="personForm.controls['personName'].hasError('pattern')" class="text-danger">Only Alphabets allowed</small>
+				<small *ngIf="personForm.controls['personName'].hasError('minlength')" class="text-danger">Minimum 4 characters required</small>
+				<small *ngIf="personForm.controls['personName'].hasError('maxlength')" class="text-danger">Maximum 8 characters allowed</small>
+			</div>
+	  </div>
+	  <div class="form-group">
+		<label for="age" class="col-sm-2 control-label">Age</label>
+		<div class="col-sm-10">
+		  <input type="text" class="form-control" placeholder="Age" formControlName="personAge">
+		</div>
+	  </div>
+	  <div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+		  <button type="submit" [disabled]="!personForm.valid" class="btn btn-default">Submit</button>
+		</div>
+	  </div>
+	</form>
+<div>

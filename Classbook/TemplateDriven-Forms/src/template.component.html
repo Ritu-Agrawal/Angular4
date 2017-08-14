@@ -1,0 +1,23 @@
+<div>
+	<h1>Template driven Form</h1>
+	<hr/>
+	<form class="form-horizontal" novalidate (ngSubmit)="onSubmit(person.value)" #person="ngForm">
+	  <div class="form-group">
+		<label for="name" class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-10">
+		  <input type="text" class="form-control" id="name" #name="ngModel" placeholder="Name" name="name"  [(ngModel)]="person.name">
+		</div>
+	  </div>
+	  <div class="form-group">
+		<label for="age" class="col-sm-2 control-label">Age</label>
+		<div class="col-sm-10">
+		  <input type="text" class="form-control" id="age" required placeholder="Age" #age="ngModel" name="age" [(ngModel)]="person.age">
+		</div>
+	  </div>
+	  <div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+		  <button type="submit" class="btn btn-default">Submit</button>
+		</div>
+	  </div>
+	</form>
+<div>
